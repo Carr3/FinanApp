@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio de Sesión - FinanApp</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body {
+background-color: #478b36;
+background-color: rgba(71,139,54,255);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.logo-container {
+position: absolute;
+top: 20px;
+left: 20px;
+}
+.logo-container img {
+max-width: 200px;
+margin-bottom: 20px;
+}
+.login-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+0% {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+.login-card {
+background-color: #78b357;
+background-color: rgba(120,179,87,255);
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 1100px;
+animation: fadeIn 1.5s ease-in-out 0.5s;
+animation-fill-mode: both;
+}
+.login-card h2 {
+color: white;
+text-align: center;
+margin-bottom: 30px;
+}
+.login-card .btn {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+}
+.login-card .btn img {
+max-height: 24px;
+margin-right: 10px;
+}
+.login-options {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+.login-options .btn {
+width: 48%;
+}
+
+/* Botón para pasar a la siguiente página sin login/registro */
+/* Dejar este botón comentado para usarlo solo en producción */
+
+ .bypass-login {
+display: block;
+margin-top: 20px;
+text-align: center;
+}
+.bypass-login a {
+color: white;
+text-decoration: underline;
+} 
+
+/* Fin del botón para pasar a la siguiente página sin login/registro */
+
+
+</style>
+</head>
+<body>
+<div class="logo-container">
+<img src="images/FinanAppLogo.jpg" alt="FinanApp Logo">
+</div>
+<div class="login-container">
+<div class="login-card">
+<h2>Inicia sesión</h2>
+<div class="login-options">
+  <button class="btn btn-outline-light">
+    <img src="images/google_logo.png" alt="Google">
+    Iniciar sesión con Google
+  </button>
+  <button class="btn btn-outline-light">
+    <img src="images/email_logo.png" alt="Email">
+    Iniciar sesión con correo electrónico
+  </button>
+</div>
+<div class="form-group">
+  <a href="#" class="btn btn-link text-white">¿No tienes una cuenta? Regístrate</a>
+</div>
+
+<!-- Botón para pasar a la siguiente página sin login/registro -->
+<!-- Dejar este botón comentado para usarlo solo en producción -->
+
+ <div class="bypass-login">
+  <a href="home.html">Hacks</a>
+</div> 
+
+<!-- Fin del botón para pasar a la siguiente página sin login/registro -->
+
+</div>
+</div>
+</body>
+</html>

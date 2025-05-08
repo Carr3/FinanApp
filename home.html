@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinanApp - Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(71,139,54,255);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .navbar {
+      background-color: rgba(120,179,87,255);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar-brand img {
+      max-width: 150px;
+      margin-right: 10px;
+    }
+
+    .settings-icon {
+      cursor: pointer;
+    }
+
+    .sidebar {
+      background-color: rgba(120,179,87,255);
+      padding: 20px;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      right: -200px; /* Oculto por defecto a la derecha */
+      height: 100%;
+      transition: right 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    .sidebar.open {
+      right: 0; /* Mostrar sidebar */
+    }
+
+    .sidebar-nav {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .sidebar-nav li.logout {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .sidebar-nav li.logout a {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .container {
+      background-color: rgba(120,179,87,255);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1100px;
+      margin: 20px auto;
+      animation: fadeIn 1.5s ease-in-out 0.5s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .intro-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .button-container a img {
+      max-width: 200px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="images/FinanAppLogo.jpg" alt="FinanApp Logo">
+      <span style="margin-left: 625px;">HOME</span>
+    </div>
+    <div class="navbar-nav">
+      <img src="images/config_logo.png" alt="Settings" class="settings-icon">
+    </div>
+  </nav>
+
+  <div class="sidebar">
+    <ul class="sidebar-nav">
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Acerca de nosotros</a></li>
+      <li class="logout"><a href="#">Cerrar sesión</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="intro-text">
+        FinanApp es una aplicación web diseñada para ayudar a los usuarios a tomar el control de sus finanzas personales de manera sencilla y efectiva. A través de tutoriales educativos, los usuarios aprenderán sobre presupuestos y ahorro, mientras que herramientas de análisis financiero, como una calculadora de ingresos y gastos, les permitirán monitorear su situación económica de forma clara. La aplicación se enfoca en la usabilidad, ofreciendo una interfaz intuitiva y segura, con autenticación básica para proteger la información del usuario. Con un enfoque en la educación financiera, FinanApp empodera a los usuarios para que tomen decisiones informadas y mejoren su bienestar financiero.
+    </div>
+    <div class="button-container">
+      <a href="modulo_educativo.html">
+        <img src="images/libro_logo.png" alt="Botón 1">
+      </a>
+      <a href="calculadora.html">
+        <img src="images/calculadora_logo.png" alt="Botón 2">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.settings-icon').addEventListener('click', () => {
+      document.querySelector('.sidebar').classList.toggle('open');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.sidebar') && !event.target.closest('.settings-icon')) {
+        document.querySelector('.sidebar').classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
