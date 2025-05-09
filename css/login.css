@@ -1,0 +1,83 @@
+@import "styles.css";
+
+.logo-container {
+position: absolute;
+top: 20px;
+left: 20px;
+}
+
+.logo-container img {
+max-width: 200px;
+margin-bottom: 20px;
+}
+
+.login-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translateY(-50px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.login-card {
+background-color: #78b357;
+background-color: rgba(120,179,87,255);
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 1100px;
+animation: fadeIn 1.5s ease-in-out 0.5s;
+animation-fill-mode: both;
+}
+
+.login-card h2 {
+color: white;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.login-card .btn {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+}
+
+.login-card .btn img {
+max-height: 24px;
+margin-right: 10px;
+}
+
+.login-options {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.login-options .btn {
+width: 48%;
+}
+
+.bypass-login {
+display: block;
+margin-top: 20px;
+text-align: center;
+}
+
+.bypass-login a {
+color: white;
+text-decoration: underline;
+}

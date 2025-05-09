@@ -5,91 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: rgba(71,139,54,255);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    .navbar {
-      background-color: rgba(120,179,87,255);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .navbar-brand img {
-      max-width: 150px;
-      margin-right: 10px;
-    }
-
-    .navbar-brand span {
-      margin-left: 510px;
-    }
-
-    .settings-icon {
-      cursor: pointer;
-    }
-
-    .sidebar {
-      background-color: rgba(120,179,87,255);
-      padding: 20px;
-      width: 200px;
-      position: fixed;
-      top: 0;
-      right: -200px; /* Oculto por defecto a la derecha */
-      height: 100%;
-      transition: right 0.3s ease-in-out;
-      z-index: 1;
-    }
-
-    .sidebar.open {
-      right: 0; /* Mostrar sidebar */
-    }
-
-    .sidebar-nav {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .sidebar-nav li {
-      margin-bottom: 10px;
-    }
-
-    .sidebar-nav li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .sidebar-nav li.logout {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-    }
-
-    .sidebar-nav li.logout a {
-      color: #ff0000;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="css/calculadora.css">
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
       <img src="images/FinanAppLogo.jpg" alt="FinanApp Logo">
       <span style="margin-left: 610px;">Calculadora</span>
