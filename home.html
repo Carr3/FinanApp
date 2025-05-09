@@ -18,17 +18,11 @@
     </div>
   </nav>
 
-  <div class="sidebar">
-    <ul class="sidebar-nav">
-      <li><a href="#">Perfil</a></li>
-      <li><a href="#">Acerca de nosotros</a></li>
-      <li class="logout"><a href="#">Cerrar sesión</a></li>
-    </ul>
-  </div>
+  <div id="sidebar-container"></div>
 
   <div class="container">
     <div class="intro-text">
-        FinanApp es una aplicación web diseñada para ayudar a los usuarios a tomar el control de sus finanzas personales de manera sencilla y efectiva. A través de tutoriales educativos, los usuarios aprenderán sobre presupuestos y ahorro, mientras que herramientas de análisis financiero, como una calculadora de ingresos y gastos, les permitirán monitorear su situación económica de forma clara. La aplicación se enfoca en la usabilidad, ofreciendo una interfaz intuitiva y segura, con autenticación básica para proteger la información del usuario. Con un enfoque en la educación financiera, FinanApp empodera a los usuarios para que tomen decisiones informadas y mejoren su bienestar financiero.
+      FinanApp es una aplicación web diseñada para ayudar a los usuarios a tomar el control de sus finanzas personales de manera sencilla y efectiva. A través de tutoriales educativos, los usuarios aprenderán sobre presupuestos y ahorro, mientras que herramientas de análisis financiero, como una calculadora de ingresos y gastos, les permitirán monitorear su situación económica de forma clara. La aplicación se enfoca en la usabilidad, ofreciendo una interfaz intuitiva y segura, con autenticación básica para proteger la información del usuario. Con un enfoque en la educación financiera, FinanApp empodera a los usuarios para que tomen decisiones informadas y mejoren su bienestar financiero.
     </div>
     <div class="button-container">
       <a href="modulo_educativo.html">
@@ -50,6 +44,18 @@
         document.querySelector('.sidebar').classList.remove('open');
       }
     });
+
+    // Función para cargar la sidebar
+    function loadSidebar() {
+      fetch('sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar la sidebar:', error));
+    }
+
+    loadSidebar();
   </script>
 </body>
 </html>

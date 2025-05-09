@@ -11,22 +11,58 @@
   <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
       <img src="images/FinanAppLogo.jpg" alt="FinanApp Logo">
-      <span style="margin-left: 510px;" >Aprende sobre presupuestos</span>
+      <span style="margin-left: 510px;">Aprende sobre presupuestos</span>
     </div>
     <div class="navbar-nav">
       <img src="images/config_logo.png" alt="Settings" class="settings-icon">
     </div>
   </nav>
 
-  <div class="sidebar">
-    <ul class="sidebar-nav">
-      <li><a href="#">Perfil</a></li>
-      <li><a href="#">Acerca de nosotros</a></li>
-      <li class="logout"><a href="#">Cerrar sesión</a></li>
-    </ul>
+  <div id="sidebar-container"></div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center animate__animated animate__fadeInUp">
+        <h2>¿Qué es un presupuesto?</h2>
+        <p>Un presupuesto es un plan financiero que organiza tus ingresos y gastos en un período determinado (semanal, mensual, anual, etc.). Su objetivo principal es ayudarte a administrar mejor tu dinero, asegurando que cubras tus necesidades esenciales, ahorres para el futuro y evites gastos innecesarios.</p>
+
+        <h2 style="margin-top: 2rem;">Beneficios de tener un presupuesto:</h2>
+        <ul>
+          <li>Control financiero: Sabrás exactamente en que gastas tu dinero.</li>
+          <li>Reducción de deudas: Te ayuda a priorizar pagos y evitar gastos impulsivos.</li>
+          <li>Ahorro y metas: Facilita destinar fondos para emergencias, proyectos o inversiones.</li>
+          <li>Menos estres: Al tener claridad sobre tus finanzas, reduces la incertidumbre económica.</li>
+        </ul>
+
+        <h2 style="margin-top: 2rem;">¿Cómo hacer un presupuesto?</h2>
+        <ol>
+          <li>Calcula tus ingresos (salario, rentas, etc.).</li>
+          <li>Registra tus gastos fijos (alquiler, servicios, deudas).</li>
+          <li>Identifica gastos variables (comida, ocio, imprevistos).</li>
+          <li>Establece metas (ahorro, pago de deudas).</li>
+          <li>Ajusta y revisa periódicamente.</li>
+        </ol>
+
+        <p style="margin-top: 2rem;">Un presupuesto no es restrictivo, ¡es una herramienta para alcanzar libertad financiera! ¿Necesitas ayuda para crear uno? ¡Abre la calculadora de la app!</p>
+      </div>
+    </div>
   </div>
 
-  <!-- Agrega aquí el contenido de la página "módulo_educativo.html" -->
+  <div class="container mt-5 animate__animated animate__fadeInUp">
+    <div class="row">
+      <div class="col-6">
+        <img src="images/g_finanzas.png" alt="Gráfica 1" class="img-fluid">
+      </div>
+      <div class="col-6">
+        <img src="images/g2_finanzas.png" alt="Gráfica 2" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 text-center">
+    <h2>Video Explicativo</h2>
+    <div id="youtube-player"></div>
+  </div>
 
   <script>
     document.querySelector('.settings-icon').addEventListener('click', () => {
@@ -38,6 +74,52 @@
         document.querySelector('.sidebar').classList.remove('open');
       }
     });
+
+    // Función para cargar la sidebar
+    function loadSidebar() {
+      fetch('sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar la sidebar:', error));
+    }
+
+    loadSidebar();
+
+    // Código para mostrar el video de YouTube
+    var videoId = '9sCVcWD1Svs';
+
+    function onYouTubeIframeAPIReady() {
+      console.log('onYouTubeIframeAPIReady called');
+      player = new YT.Player('youtube-player', {
+        height: '390',
+        width: '640',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      console.log('onPlayerReady called');
+    }
+
+    function onPlayerStateChange(event) {
+      console.log('onPlayerStateChange called');
+    }
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow.js/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
   </script>
 </body>
 </html>
